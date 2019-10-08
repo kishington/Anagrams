@@ -3,22 +3,21 @@ import java.util.ArrayList;
 import static java.lang.Character.isWhitespace;
 
 public class Anagram{
-      
-    public Anagram(String sentence) {
-        System.out.println(createAnagram(sentence));
-    }
-   
+
     public static void main(String []args){
    
-        String sentence = "   Sk3fsl=f kLj;pof-W f4wer sd9a   ";
-        System.out.println("Original sentence:");
-        System.out.println(sentence);
+        String inputText = "   Sk3fsl=f kLj;pof-W f4wer sd9a   ";
+        String outputText = new Anagram().createAnagram(inputText);
+        
+        System.out.println("Original text:");
+        System.out.println(inputText);
         
         System.out.println("Anagram:");
-        new Anagram(sentence);
+        System.out.println(outputText);
+        
      }
     
-
+    
     String createAnagram(String sentence) {
        
         ArrayList<String> wordList = WordCatcher.getWordsFromString(sentence);
