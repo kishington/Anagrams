@@ -15,7 +15,7 @@ public class Anagram{
         System.out.println(outputText);        
     }
     
-    String createAnagram(String sentence) {
+    public String createAnagram(String sentence) {
        
         ArrayList<String> words = WordCatcher.getWordsFromString(sentence);
        
