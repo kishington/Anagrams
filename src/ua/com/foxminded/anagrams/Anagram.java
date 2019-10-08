@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class Anagram{
 	public static void main(String []args){
    
-        String inputText = "   Sk3fsl=f kLj;pof-W f4wer sd9a   ";
+        String inputText = "   Sk3fsxl=f kLj;pof-W f4wer sd9a   ";
         String outputText = new Anagram().createAnagram(inputText);
         
         System.out.println("Original text:");
@@ -17,7 +17,7 @@ public class Anagram{
     public String createAnagram(String inputText) {
     	
     	WordCatcher wordCatcher = new WordCatcher();
-        ArrayList<String> words = wordCatcher.getWordsFromString(inputText);
+        ArrayList<String> words = wordCatcher.getWords(inputText);
        
         WordModifier wordModifier = new WordModifier();
         for(int i = 0; i < words.size(); i++) {

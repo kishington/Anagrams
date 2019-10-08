@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 class WordCatcher {
    
-    public ArrayList<String> getWordsFromString(String sentence){
+    public ArrayList<String> getWords(String sentence){
         ArrayList<String> list = new ArrayList<>();
         String str = sentence;
         while(!str.equals(" ")){
