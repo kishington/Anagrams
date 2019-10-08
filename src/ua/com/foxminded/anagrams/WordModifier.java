@@ -2,7 +2,7 @@ package ua.com.foxminded.anagrams;
 
 class WordModifier {
    
-    public static String reverseLettersInWord(String word) {
+    public String reverseLettersInWord(String word) {
       
         StringBuilder lettersOnly = new StringBuilder(removeNonLetterChars(word));
         lettersOnly.reverse();
@@ -33,7 +33,7 @@ class WordModifier {
         return newWord.toString();
     }
    
-    public static String removeNonLetterChars(String word) {
+    public String removeNonLetterChars(String word) {
         
     	StringBuilder newWord = new StringBuilder();
        

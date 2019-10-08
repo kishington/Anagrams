@@ -16,11 +16,13 @@ public class Anagram{
     }
     
     public String createAnagram(String sentence) {
+    	
+    	WordCatcher wordCatcher = new WordCatcher();
+        ArrayList<String> words = wordCatcher.getWordsFromString(sentence);
        
-        ArrayList<String> words = WordCatcher.getWordsFromString(sentence);
-       
+        WordModifier wordModifier = new WordModifier();
         for(int i = 0; i < words.size(); i++) {
-            String str = WordModifier.reverseLettersInWord(words.get(i));
+            String str = wordModifier.reverseLettersInWord(words.get(i));
             words.set(i,str);
         }
 

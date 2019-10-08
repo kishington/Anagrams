@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 class WordCatcher {
    
-    public static ArrayList<String> getWordsFromString(String sentence){
+    public ArrayList<String> getWordsFromString(String sentence){
         ArrayList<String> list = new ArrayList<>();
         String str = sentence;
         while(!str.equals(" ")){
@@ -13,7 +13,7 @@ class WordCatcher {
         return list;
     }
    
-    public static String getFirstWord(String sentence) {
+    public String getFirstWord(String sentence) {
         String str = sentence.trim() + " ";
         int i = 0;
         while(!Character.isWhitespace(str.charAt(i))) {
@@ -22,7 +22,7 @@ class WordCatcher {
         return str.substring(0,i);
     }
    
-    public static String deleteFirstWord(String sentence) {
+    public String deleteFirstWord(String sentence) {
         String str = sentence.trim() + " ";
         int i = 0;
         while(!Character.isWhitespace(str.charAt(i))) {
