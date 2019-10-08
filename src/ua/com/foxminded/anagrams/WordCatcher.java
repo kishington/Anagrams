@@ -1,9 +1,7 @@
 package ua.com.foxminded.anagrams;
-
 import static java.lang.Character.isWhitespace;
 import java.util.ArrayList;
 
-// This class provides some methods to work with words in a String
 class WordCatcher {
    
     static ArrayList<String> getWordsFromString(String sentence){
@@ -28,8 +26,5 @@ class WordCatcher {
         int i = 0;
         while(!isWhitespace(str.charAt(i))) i++;
         return str.substring(i);
-    }
-   
-   
-   
+    }  
 }

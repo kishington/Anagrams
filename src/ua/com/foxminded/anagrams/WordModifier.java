@@ -1,22 +1,20 @@
 package ua.com.foxminded.anagrams;
 
-// This class provides some methods to modify words
 class WordModifier {
    
-    // this method reverses all a-z characters in a word
     static String reverseLettersInWord(String word) {
       
-        StringBuilder lettersOnly = new StringBuilder(removeNonLetterChars(word)); // remove all non a-z chars in the word
+        StringBuilder lettersOnly = new StringBuilder(removeNonLetterChars(word));
         lettersOnly.reverse();
        
-        char[] arr = new char[word.length()]; // auxiliary array to store non a-z chars and dummy values for a-z chars. It will be used to get a new word
+        char[] arr = new char[word.length()];
        
         for(int i=0; i < arr.length; i++) {
             char ch = word.charAt(i);
             if((ch < 65) || (ch > 122) || ((ch > 90) && (ch < 97)))
-                arr[i] = ch; // non a-z char stored here
+                arr[i] = ch;
             else
-                arr[i] = 'x'; // dummy value at positions for a-z chars
+                arr[i] = 'x';
         }
        
         StringBuilder newWord = new StringBuilder();
@@ -28,12 +26,9 @@ class WordModifier {
             } else
                 newWord.append(arr[i]);
         }
-        
         return newWord.toString();
     }
    
-    
-    // this method removes all non a-z characters from a word
     static String removeNonLetterChars(String word) {
         
     	StringBuilder newWord = new StringBuilder();
@@ -41,7 +36,7 @@ class WordModifier {
         for(int i=0; i < word.length(); i++){
             char ch = word.charAt(i);
             if((ch > 96) && (ch < 123) || (ch > 64) && (ch < 91))
-                newWord.append(ch); // adding a-z chars only
+                newWord.append(ch);
         }
         return newWord.toString();
     }
