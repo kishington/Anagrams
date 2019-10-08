@@ -16,14 +16,18 @@ class WordCatcher {
     static String getFirstWord(String sentence) {
         String str = sentence.trim() + " ";
         int i = 0;
-        while(!Character.isWhitespace(str.charAt(i))) i++;
+        while(!Character.isWhitespace(str.charAt(i))) {
+        	i++;
+        }
         return str.substring(0,i);
     }
    
     static String deleteFirstWord(String sentence) {
         String str = sentence.trim() + " ";
         int i = 0;
-        while(!Character.isWhitespace(str.charAt(i))) i++;
+        while(!Character.isWhitespace(str.charAt(i))) {
+        	i++;
+        }
         return str.substring(i);
     }  
 }
