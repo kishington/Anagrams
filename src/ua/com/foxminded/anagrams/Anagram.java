@@ -1,6 +1,5 @@
 package ua.com.foxminded.anagrams;
 import java.util.ArrayList;
-import static java.lang.Character.isWhitespace;
 
 public class Anagram{
 	public static void main(String []args){
@@ -30,7 +29,7 @@ public class Anagram{
         int i = 0;
         int j = 0;
         while(i < sentence.length()) {
-            if(!isWhitespace(sentence.charAt(i))) { 
+            if(!Character.isWhitespace(sentence.charAt(i))) { 
                 newSentence.append(words.get(j));
                 i += words.get(j).length();
                 j++;
