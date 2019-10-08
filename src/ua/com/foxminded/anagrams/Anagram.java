@@ -14,10 +14,10 @@ public class Anagram{
         System.out.println(outputText);        
     }
     
-    public String createAnagram(String sentence) {
+    public String createAnagram(String inputText) {
     	
     	WordCatcher wordCatcher = new WordCatcher();
-        ArrayList<String> words = wordCatcher.getWordsFromString(sentence);
+        ArrayList<String> words = wordCatcher.getWordsFromString(inputText);
        
         WordModifier wordModifier = new WordModifier();
         for(int i = 0; i < words.size(); i++) {
@@ -25,19 +25,19 @@ public class Anagram{
             words.set(i,str);
         }
 
-        StringBuilder newSentence = new StringBuilder();
+        StringBuilder outputText = new StringBuilder();
         int i = 0;
         int j = 0;
-        while(i < sentence.length()) {
-            if(!Character.isWhitespace(sentence.charAt(i))) { 
-                newSentence.append(words.get(j));
+        while(i < inputText.length()) {
+            if(!Character.isWhitespace(inputText.charAt(i))) { 
+                outputText.append(words.get(j));
                 i += words.get(j).length();
                 j++;
             } else {
-                newSentence.append(sentence.charAt(i));
+                outputText.append(inputText.charAt(i));
                 i++;
             }
         }
-        return newSentence.toString();
+        return outputText.toString();
     }
 }
