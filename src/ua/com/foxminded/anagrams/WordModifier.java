@@ -3,31 +3,33 @@ package ua.com.foxminded.anagrams;
 class WordModifier {
    
     public String reverseLettersInWord(String word) {
+    	
+    	final char dummyChar = 'x';
       
-        StringBuilder lettersOnly = new StringBuilder(removeNonLetterChars(word));
-        lettersOnly.reverse();
+        StringBuilder letterCharsOnly = new StringBuilder(removeNonLetterChars(word));
+        letterCharsOnly.reverse();
        
-        char[] arr = new char[word.length()];
+        char[] nonLetterChars = new char[word.length()];
        
-        for(int i=0; i < arr.length; i++) {
-            char ch = word.charAt(i);
-            if(!Character.isLetter(ch)) {
-            	arr[i] = ch;
+        for(int i=0; i < nonLetterChars.length; i++) {
+            char currentChar = word.charAt(i);
+            if(!Character.isLetter(currentChar)) {
+            	nonLetterChars[i] = currentChar;
             }
             else {
-            	arr[i] = 'x';
+            	nonLetterChars[i] = dummyChar;
             }
         }
        
         StringBuilder newWord = new StringBuilder();
        
-        for(int i=0; i < arr.length; i++) {
-            if(arr[i]=='x') {
-                newWord.append(lettersOnly.charAt(0));
-                lettersOnly.deleteCharAt(0);
+        for(int i=0; i < nonLetterChars.length; i++) {
+            if(nonLetterChars[i] == dummyChar) {
+                newWord.append(letterCharsOnly.charAt(0));
+                letterCharsOnly.deleteCharAt(0);
             }
             else {
-            	newWord.append(arr[i]);
+            	newWord.append(nonLetterChars[i]);
             }
         }
         return newWord.toString();
@@ -38,9 +40,9 @@ class WordModifier {
     	StringBuilder newWord = new StringBuilder();
        
         for(int i=0; i < word.length(); i++){
-            char ch = word.charAt(i);
-            if(Character.isLetter(ch)) {
-            	newWord.append(ch);
+            char currentChar = word.charAt(i);
+            if(Character.isLetter(currentChar)) {
+            	newWord.append(currentChar);
             }
         }
         return newWord.toString();

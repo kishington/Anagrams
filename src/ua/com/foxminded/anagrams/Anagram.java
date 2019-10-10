@@ -21,21 +21,21 @@ public class Anagram{
        
         WordModifier wordModifier = new WordModifier();
         for(int i = 0; i < words.size(); i++) {
-            String str = wordModifier.reverseLettersInWord(words.get(i));
-            words.set(i,str);
+            String modifiedWord = wordModifier.reverseLettersInWord(words.get(i));
+            words.set(i,modifiedWord);
         }
 
         StringBuilder outputText = new StringBuilder();
-        int i = 0;
-        int j = 0;
-        while(i < inputText.length()) {
-            if(!Character.isWhitespace(inputText.charAt(i))) { 
-                outputText.append(words.get(j));
-                i += words.get(j).length();
-                j++;
+        int charIndex = 0;
+        int wordIndex = 0;
+        while(charIndex < inputText.length()) {
+            if(!Character.isWhitespace(inputText.charAt(charIndex))) { 
+                outputText.append(words.get(wordIndex));
+                charIndex += words.get(wordIndex).length();
+                wordIndex++;
             } else {
-                outputText.append(inputText.charAt(i));
-                i++;
+                outputText.append(inputText.charAt(charIndex));
+                charIndex++;
             }
         }
         return outputText.toString();
