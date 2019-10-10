@@ -11,7 +11,7 @@ class WordModifier {
        
         for(int i=0; i < arr.length; i++) {
             char ch = word.charAt(i);
-            if((ch < 65) || (ch > 122) || ((ch > 90) && (ch < 97))) {
+            if(!Character.isLetter(ch)) {
             	arr[i] = ch;
             }
             else {
@@ -39,7 +39,7 @@ class WordModifier {
        
         for(int i=0; i < word.length(); i++){
             char ch = word.charAt(i);
-            if((ch > 96) && (ch < 123) || (ch > 64) && (ch < 91)) {
+            if(Character.isLetter(ch)) {
             	newWord.append(ch);
             }
         }
