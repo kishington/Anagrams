@@ -1,7 +1,7 @@
 package ua.com.foxminded.anagrams;
 import java.util.ArrayList;
 
-class WordCatcher {
+public class WordCatcher {
      
     public ArrayList<String> getWords(String inputText) {
     	ArrayList<String> words = new ArrayList<>();

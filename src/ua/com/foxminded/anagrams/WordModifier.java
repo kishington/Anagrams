@@ -1,6 +1,6 @@
 package ua.com.foxminded.anagrams;
 
-class WordModifier {
+public class WordModifier {
    
     public String reverseLettersInWord(String word) {
     	
