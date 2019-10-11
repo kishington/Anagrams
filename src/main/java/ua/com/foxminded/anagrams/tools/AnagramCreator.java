@@ -10,7 +10,8 @@ public class AnagramCreator {
         List<String> words = wordManipulator.getWords(inputText);
 
         for (int i = 0; i < words.size(); i++) {
-            String modifiedWord = wordManipulator.reverseLettersInWord(words.get(i));
+            String currentWord = words.get(i);
+            String modifiedWord = wordManipulator.reverseLettersInWord(currentWord);
             words.set(i, modifiedWord);
         }
 
