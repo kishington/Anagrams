@@ -1,32 +1,35 @@
 package main.java.ua.com.foxminded.anagrams.tools;
-import java.util.ArrayList;
+
+import java.util.*;
 
 public class AnagramCreator {
 
-	public String createAnagram(String inputText) {
+    public String createAnagram(String inputText) {
 
-		WordCatcher wordCatcher = new WordCatcher();
-		ArrayList<String> words = wordCatcher.getWords(inputText);
+        WordManipulator wordManipulator = new WordManipulator();
+        List<String> words = wordManipulator.getWords(inputText);
 
-		WordModifier wordModifier = new WordModifier();
-		for (int i = 0; i < words.size(); i++) {
-			String modifiedWord = wordModifier.reverseLettersInWord(words.get(i));
-			words.set(i, modifiedWord);
-		}
+        for (int i = 0; i < words.size(); i++) {
+            String modifiedWord = wordManipulator.reverseLettersInWord(words.get(i));
+            words.set(i, modifiedWord);
+        }
 
-		StringBuilder outputText = new StringBuilder();
-		int charIndex = 0;
-		int wordIndex = 0;
-		while (charIndex < inputText.length()) {
-			if (!Character.isWhitespace(inputText.charAt(charIndex))) {
-				outputText.append(words.get(wordIndex));
-				charIndex += words.get(wordIndex).length();
-				wordIndex++;
-			} else {
-				outputText.append(inputText.charAt(charIndex));
-				charIndex++;
-			}
-		}
-		return outputText.toString();
-	}
+        StringBuilder outputText = new StringBuilder();
+        int charIndex = 0;
+        int wordIndex = 0;
+        while (charIndex < inputText.length()) {
+            char currentChar = inputText.charAt(charIndex);
+            boolean isCurrentCharWhitespace = Character.isWhitespace(currentChar);
+            if (!isCurrentCharWhitespace) {
+                String currentWord = words.get(wordIndex);
+                outputText.append(currentWord);
+                charIndex += currentWord.length();
+                wordIndex++;
+            } else {
+                outputText.append(currentChar);
+                charIndex++;
+            }
+        }
+        return outputText.toString();
+    }
 }
