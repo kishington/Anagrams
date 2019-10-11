@@ -16,3 +16,4 @@ public class Anagram {
         System.out.println(outputText);
     }
 }
+
