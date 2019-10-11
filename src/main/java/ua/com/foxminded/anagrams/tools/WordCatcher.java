@@ -1,4 +1,4 @@
-package ua.com.foxminded.anagrams;
+package main.java.ua.com.foxminded.anagrams.tools;
 import java.util.ArrayList;
 
 public class WordCatcher {
