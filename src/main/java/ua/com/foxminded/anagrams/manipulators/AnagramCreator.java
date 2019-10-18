@@ -19,15 +19,15 @@ public class AnagramCreator {
         int charIndex = 0;
         int wordIndex = 0;
         while (charIndex < inputText.length()) {
-            char currentChar = inputText.charAt(charIndex);
-            boolean isCurrentCharWhitespace = Character.isWhitespace(currentChar);
+            char ch = inputText.charAt(charIndex);
+            boolean isCurrentCharWhitespace = Character.isWhitespace(ch);
             if (!isCurrentCharWhitespace) {
                 String currentWord = words.get(wordIndex);
                 outputText.append(currentWord);
                 charIndex += currentWord.length();
                 wordIndex++;
             } else {
-                outputText.append(currentChar);
+                outputText.append(ch);
                 charIndex++;
             }
         }
