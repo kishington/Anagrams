@@ -1,4 +1,4 @@
-package main.java.ua.com.foxminded.anagrams.tools;
+package main.java.ua.com.foxminded.anagrams.manipulators;
 
 import java.util.*;
 
