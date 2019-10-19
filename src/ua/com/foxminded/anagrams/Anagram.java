@@ -1,6 +1,6 @@
-package main.java.ua.com.foxminded.anagrams;
+package ua.com.foxminded.anagrams;
 
-import main.java.ua.com.foxminded.anagrams.manipulators.AnagramCreator;
+import ua.com.foxminded.anagrams.manipulators.AnagramCreator;
 
 public class Anagram {
     public static void main(String[] args) {
