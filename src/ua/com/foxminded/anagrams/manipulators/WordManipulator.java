@@ -1,26 +1,37 @@
 package ua.com.foxminded.anagrams.manipulators;
 
-import java.util.*;
-
 public class WordManipulator {
-    private static final String WHITESPACE_REGEX = "\\s";
     private static final char DUMMY_CHAR = 'x';
+    private static final String WHITESPACES = "\\s+";
+    
+    public String createAnagram(String inputText) {
 
-    public List<String> getWords(String inputText) {
-        List<String> words = new ArrayList<String>();
-        boolean reachedLastWord = false;
-        while (!reachedLastWord) {
-            inputText = inputText.trim();
-            String[] firstWordAndRest = inputText.split(WHITESPACE_REGEX, 2);
-            String firstWord = firstWordAndRest[0];
-            words.add(firstWord);
-            if (firstWordAndRest.length == 2) {
-                inputText = firstWordAndRest[1];
+        String trimmedInput = inputText.trim();
+        String[] words = trimmedInput.split(WHITESPACES);
+        
+        WordManipulator wordManipulator = new WordManipulator();
+
+        for (int i = 0; i < words.length; i++) {
+            words[i] = wordManipulator.reverseLettersInWord(words[i]);
+        }
+
+        StringBuilder outputText = new StringBuilder();
+        int charIndex = 0;
+        int wordIndex = 0;
+        while (charIndex < inputText.length()) {
+            char ch = inputText.charAt(charIndex);
+            boolean isCurrentCharWhitespace = Character.isWhitespace(ch);
+            if (!isCurrentCharWhitespace) {
+                String currentWord = words[wordIndex];
+                outputText.append(currentWord);
+                charIndex += currentWord.length();
+                wordIndex++;
             } else {
-                reachedLastWord = true;
+                outputText.append(ch);
+                charIndex++;
             }
         }
-        return words;
+        return outputText.toString();
     }
 
     public String reverseLettersInWord(String word) {
