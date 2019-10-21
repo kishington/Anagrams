@@ -4,7 +4,7 @@
   <groupId>ua.com.foxminded</groupId>
   <artifactId>anagrams</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>cleancodelessons</name>
+  <name>AnagramExercise</name>
 
   <build>  
     
