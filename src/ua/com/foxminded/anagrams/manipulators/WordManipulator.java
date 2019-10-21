@@ -34,7 +34,7 @@ public class WordManipulator {
         return outputText.toString();
     }
 
-    public String reverseLetters(String word) {
+    private String reverseLetters(String word) {
 
         String letterCharsOnlyString = removeNonLetterChars(word);
         StringBuilder letterCharsOnly = new StringBuilder(letterCharsOnlyString);
@@ -64,7 +64,7 @@ public class WordManipulator {
         return newWord.toString();
     }
 
-    public String removeNonLetterChars(String word) {
+    private String removeNonLetterChars(String word) {
 
         StringBuilder newWord = new StringBuilder();
 
