@@ -19,15 +19,15 @@ public class WordManipulator {
         int charIndex = 0;
         int wordIndex = 0;
         while (charIndex < inputText.length()) {
-            char ch = inputText.charAt(charIndex);
-            boolean isCurrentCharWhitespace = Character.isWhitespace(ch);
+            char character = inputText.charAt(charIndex);
+            boolean isCurrentCharWhitespace = Character.isWhitespace(character);
             if (!isCurrentCharWhitespace) {
                 String currentWord = words[wordIndex];
                 outputText.append(currentWord);
                 charIndex += currentWord.length();
                 wordIndex++;
             } else {
-                outputText.append(ch);
+                outputText.append(character);
                 charIndex++;
             }
         }
