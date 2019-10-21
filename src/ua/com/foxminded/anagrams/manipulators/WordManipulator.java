@@ -12,7 +12,7 @@ public class WordManipulator {
         WordManipulator wordManipulator = new WordManipulator();
 
         for (int i = 0; i < words.length; i++) {
-            words[i] = wordManipulator.reverseLettersInWord(words[i]);
+            words[i] = wordManipulator.reverseLetters(words[i]);
         }
 
         StringBuilder outputText = new StringBuilder();
@@ -34,7 +34,7 @@ public class WordManipulator {
         return outputText.toString();
     }
 
-    public String reverseLettersInWord(String word) {
+    public String reverseLetters(String word) {
 
         String letterCharsOnlyString = removeNonLetterChars(word);
         StringBuilder letterCharsOnly = new StringBuilder(letterCharsOnlyString);
