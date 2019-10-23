@@ -13,16 +13,28 @@ class WordManipulatorTest {
     }
 
     @Test
-    void createAnagramOutputWhenPassedEmptyString() {
+    public void createAnagramShouldThrowNullPointerExceptionWhenPassedNull() {
+        assertThrows(NullPointerException.class, () -> manipulator.createAnagram(null));
+    }
+    
+    @Test
+    void createAnagramShouldOutputSameStringWhenPassedEmptyString() {
         String expected = "";
         String actual = manipulator.createAnagram("");
         assertEquals(expected, actual);
     }
 
     @Test
-    void createAnagramOutputWhenPassedJustWhitespaces() {
-        String expected = "  \t   \n   \r   ";
-        String actual = manipulator.createAnagram("  \t   \n   \r   ");
+    void createAnagramSouldOutputSameStringWhenPassedOneSpace() {
+        String expected = " ";
+        String actual = manipulator.createAnagram(" ");
+        assertEquals(expected, actual);
+    }
+    
+    @Test
+    void createAnagramSouldOutputSameStringWhenPassedThreeSpaces() {
+        String expected = "   ";
+        String actual = manipulator.createAnagram("   ");
         assertEquals(expected, actual);
     }
 
@@ -40,10 +52,5 @@ class WordManipulatorTest {
         actual = manipulator.createAnagram(actual);
         assertEquals(expected, actual);
     }
-
-    @Test
-    public void createAnagramShouldThrowNullPointerExceptionWhenPassedNull() {
-        assertThrows(NullPointerException.class, () -> manipulator.createAnagram(null));
-    }
-
 }
+
