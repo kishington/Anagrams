@@ -44,9 +44,10 @@ class WordManipulatorTest {
 
     @Test
     void createAnagram_ShouldOnlyReverseLettersWhenPassedOneWordWithLettersAndNonLetters() {
-        String expected = "  ..aW=y$-Kj  ";
-        String actual = manipulator.createAnagram("  ..jK=y$-Wa  ");
-        assertEquals(expected, actual);
+        String input = "  ..jK=y$-Wa  ";
+        String expectedOutput = "  ..aW=y$-Kj  ";
+        String actualOutput = manipulator.createAnagram(input);
+        assertEquals(expectedOutput, actualOutput);
     }
 
     @Test
