@@ -1,7 +1,7 @@
 **Anagrams**
 
-This application reverses all the letter sybmols in the words of input text, 
-all non-letter symbols are not affected.
+This application reverses all the letter sybmols in the words of input text. 
+All non-letter symbols are not affected.
 
 Examples:
 
