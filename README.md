@@ -5,7 +5,6 @@ all non-letter symbols are not affected.
 
 Examples:
 
-*"abcd efgh" -> "dcba hgfe"
+"abcd efgh" -> "dcba hgfe"
 
-"a1bcd efg!h" -> "d1cba hgf!e"*
-
+"a1bcd efg!h" -> "d1cba hgf!e"
